@@ -30,7 +30,21 @@ int main() {
     cout << "Private Key: " << privateKey << endl;
     cout << "Public Key:  " << publicKey << endl;
 
-    for (int i 
+    for (int i = 0; i < 3; i++) {
+        string guess;
+        cout << "\nRound " << i + 1 << " guess (match rule A/B/C): ";
+        cin >> guess;
+
+        if (guess.length() == privateKey.length()) {
+            score++;
+            cout << "Correct structural match!\n";
+        } else {
+            cout << "Mismatch detected.\n";
+        }
+    }
+
+    cout << "\nFinal Score: " << score << "/3\n";
+    cout << "Simulation complete.\n";
 
     return 0;
 }
